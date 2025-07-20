@@ -1,8 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { ChevronDown, ExternalLink, Code, ShoppingCart, Palette, Globe, Users, TrendingUp } from "lucide-react";
+import { ChevronDown, ExternalLink, Code, ShoppingCart, Palette, Globe, Users, TrendingUp, Mail, Phone, MapPin, Send, Check } from "lucide-react";
 
 export const PortfolioWebsite = () => {
   const wordpressProjects = [
@@ -227,66 +230,327 @@ export const PortfolioWebsite = () => {
       {/* Services */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">Services Offered</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center">
-              <CardHeader>
-                <Code className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle>WordPress Development</CardTitle>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Professional Services</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive web solutions from concept to deployment, specializing in WordPress and WooCommerce development.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <Card className="p-8">
+              <CardHeader className="pb-4">
+                <div className="flex items-center mb-4">
+                  <Code className="h-8 w-8 text-primary mr-3" />
+                  <CardTitle className="text-2xl">WordPress Development</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">Custom themes, plugins, and WordPress solutions tailored to your needs.</p>
+                <p className="text-muted-foreground mb-6">
+                  Expert WordPress development services including custom themes, plugins, and complete website solutions.
+                </p>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    Custom Theme Development
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    Plugin Development & Integration
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    WordPress Migration & Optimization
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    Maintenance & Security Updates
+                  </li>
+                </ul>
+                <div className="text-sm text-muted-foreground">
+                  <strong>Starting from $2,500</strong> for basic WordPress sites
+                </div>
               </CardContent>
             </Card>
             
-            <Card className="text-center">
-              <CardHeader>
-                <ShoppingCart className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle>WooCommerce</CardTitle>
+            <Card className="p-8">
+              <CardHeader className="pb-4">
+                <div className="flex items-center mb-4">
+                  <ShoppingCart className="h-8 w-8 text-primary mr-3" />
+                  <CardTitle className="text-2xl">WooCommerce Solutions</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">Complete e-commerce solutions with payment integration and inventory management.</p>
+                <p className="text-muted-foreground mb-6">
+                  Complete e-commerce solutions with advanced features for online stores and marketplaces.
+                </p>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    E-commerce Store Setup
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    Payment Gateway Integration
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    Inventory Management Systems
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    Multi-vendor Marketplace
+                  </li>
+                </ul>
+                <div className="text-sm text-muted-foreground">
+                  <strong>Starting from $5,000</strong> for WooCommerce stores
+                </div>
               </CardContent>
             </Card>
             
-            <Card className="text-center">
-              <CardHeader>
-                <Palette className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle>Web Design</CardTitle>
+            <Card className="p-8">
+              <CardHeader className="pb-4">
+                <div className="flex items-center mb-4">
+                  <Palette className="h-8 w-8 text-primary mr-3" />
+                  <CardTitle className="text-2xl">Web Design</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">Modern, responsive designs that engage users and drive conversions.</p>
+                <p className="text-muted-foreground mb-6">
+                  Modern, responsive web designs that create engaging user experiences and drive business results.
+                </p>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    UI/UX Design & Wireframing
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    Responsive Mobile Design
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    Brand Identity & Logo Design
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    Conversion Optimization
+                  </li>
+                </ul>
+                <div className="text-sm text-muted-foreground">
+                  <strong>Starting from $1,500</strong> for design packages
+                </div>
               </CardContent>
             </Card>
             
-            <Card className="text-center">
-              <CardHeader>
-                <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle>Web Development</CardTitle>
+            <Card className="p-8">
+              <CardHeader className="pb-4">
+                <div className="flex items-center mb-4">
+                  <TrendingUp className="h-8 w-8 text-primary mr-3" />
+                  <CardTitle className="text-2xl">Web Development</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">Full-stack development with focus on performance and scalability.</p>
+                <p className="text-muted-foreground mb-6">
+                  Full-stack web development with focus on performance, scalability, and modern technologies.
+                </p>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    Custom Web Applications
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    API Development & Integration
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    Database Design & Optimization
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="h-4 w-4 text-success mr-3" />
+                    Performance & SEO Optimization
+                  </li>
+                </ul>
+                <div className="text-sm text-muted-foreground">
+                  <strong>Starting from $3,000</strong> for web applications
+                </div>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-foreground mb-6">Ready to Start Your Project?</h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Let's discuss how WordPress and WooCommerce can power your business growth.
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              <Users className="mr-2 h-5 w-5" />
-              Schedule Consultation
-            </Button>
-            <Button size="lg" variant="outline">
-              View Portfolio
-            </Button>
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-card">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Get In Touch</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Ready to bring your web project to life? Let's discuss your requirements and create something amazing together.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Contact Form */}
+            <div>
+              <Card className="p-8">
+                <CardHeader className="pb-6">
+                  <CardTitle className="text-2xl flex items-center">
+                    <Send className="h-6 w-6 text-primary mr-3" />
+                    Send a Message
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <form className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="firstName">First Name</Label>
+                        <Input id="firstName" placeholder="John" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="lastName">Last Name</Label>
+                        <Input id="lastName" placeholder="Doe" />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email</Label>
+                      <Input id="email" type="email" placeholder="john@example.com" />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="company">Company (Optional)</Label>
+                      <Input id="company" placeholder="Your Company" />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="projectType">Project Type</Label>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant="outline" className="w-full justify-between">
+                            Select Project Type
+                            <ChevronDown className="h-4 w-4" />
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="w-full">
+                          <DropdownMenuItem>WordPress Website</DropdownMenuItem>
+                          <DropdownMenuItem>WooCommerce Store</DropdownMenuItem>
+                          <DropdownMenuItem>Web Design</DropdownMenuItem>
+                          <DropdownMenuItem>Web Development</DropdownMenuItem>
+                          <DropdownMenuItem>Maintenance & Support</DropdownMenuItem>
+                          <DropdownMenuItem>Other</DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="budget">Project Budget</Label>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant="outline" className="w-full justify-between">
+                            Select Budget Range
+                            <ChevronDown className="h-4 w-4" />
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="w-full">
+                          <DropdownMenuItem>$1,000 - $5,000</DropdownMenuItem>
+                          <DropdownMenuItem>$5,000 - $10,000</DropdownMenuItem>
+                          <DropdownMenuItem>$10,000 - $25,000</DropdownMenuItem>
+                          <DropdownMenuItem>$25,000+</DropdownMenuItem>
+                          <DropdownMenuItem>Let's Discuss</DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Project Details</Label>
+                      <Textarea 
+                        id="message" 
+                        placeholder="Tell us about your project requirements, goals, and timeline..."
+                        rows={5}
+                      />
+                    </div>
+                    
+                    <Button className="w-full bg-primary hover:bg-primary/90" size="lg">
+                      <Send className="mr-2 h-5 w-5" />
+                      Send Message
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+            
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-6">Let's Connect</h3>
+                <p className="text-muted-foreground mb-8">
+                  Get in touch to discuss your project requirements. I'm here to help bring your vision to life 
+                  with professional WordPress and WooCommerce solutions.
+                </p>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <Mail className="h-6 w-6 text-primary mr-4 mt-1" />
+                  <div>
+                    <h4 className="font-semibold">Email</h4>
+                    <p className="text-muted-foreground">hello@webcraftstudio.com</p>
+                    <p className="text-sm text-muted-foreground">Response within 24 hours</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Phone className="h-6 w-6 text-primary mr-4 mt-1" />
+                  <div>
+                    <h4 className="font-semibold">Phone</h4>
+                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-sm text-muted-foreground">Mon-Fri, 9AM-6PM EST</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <MapPin className="h-6 w-6 text-primary mr-4 mt-1" />
+                  <div>
+                    <h4 className="font-semibold">Location</h4>
+                    <p className="text-muted-foreground">New York, NY</p>
+                    <p className="text-sm text-muted-foreground">Serving clients worldwide</p>
+                  </div>
+                </div>
+              </div>
+              
+              <Card className="p-6 bg-gradient-to-br from-primary/5 to-accent/5">
+                <h4 className="font-semibold mb-3">Quick Response Guarantee</h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  I understand that time is crucial for your business. That's why I guarantee:
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-success mr-2" />
+                    24-hour email response
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-success mr-2" />
+                    Free initial consultation
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-success mr-2" />
+                    Detailed project proposal within 48 hours
+                  </li>
+                </ul>
+              </Card>
+              
+              <div className="flex gap-4">
+                <Button size="lg" className="flex-1 bg-primary hover:bg-primary/90">
+                  <Users className="mr-2 h-5 w-5" />
+                  Schedule Call
+                </Button>
+                <Button size="lg" variant="outline" className="flex-1">
+                  View Portfolio
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
