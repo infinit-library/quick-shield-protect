@@ -1,7 +1,7 @@
-import { DeFiDashboard } from "@/components/DeFiDashboard";
+import { PortfolioWebsite } from "@/components/PortfolioWebsite";
 
 const Index = () => {
-  return <DeFiDashboard />;
+  return <PortfolioWebsite />;
 };
 
 export default Index;
