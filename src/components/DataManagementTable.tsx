@@ -26,7 +26,7 @@ interface UserData {
 }
 
 const DataManagementTable = () => {
-  const companyAData: UserData[] = [
+  const allUserData: UserData[] = [
     {
       id: 17,
       name: "kingfon",
@@ -56,10 +56,7 @@ const DataManagementTable = () => {
       email: "venus.seniordev@gmail.cc",
       created_at: "2025-07-18 14:",
       updated_at: "2025-07-18 14::"
-    }
-  ];
-
-  const companyBData: UserData[] = [
+    },
     {
       id: 19,
       name: "ASD Albert",
@@ -76,6 +73,16 @@ const DataManagementTable = () => {
       updated_at: "2025-07-18 14::"
     }
   ];
+
+  // Group data by company_name
+  const groupedData = allUserData.reduce((acc, user) => {
+    const companyName = user.company_name || "未設定の会社";
+    if (!acc[companyName]) {
+      acc[companyName] = [];
+    }
+    acc[companyName].push(user);
+    return acc;
+  }, {} as Record<string, UserData[]>);
 
   const TableSection = ({ title, data, subtitle }: { title: string; data: UserData[]; subtitle: string }) => (
     <div className="mb-8">
@@ -132,16 +139,14 @@ const DataManagementTable = () => {
 
   return (
     <div className="p-6 bg-white min-h-screen">
-      <TableSection 
-        title="部分会社A" 
-        subtitle="省スペースIDに関づく会社"
-        data={companyAData} 
-      />
-      <TableSection 
-        title="部分会社B" 
-        subtitle="省スペースIDに関づく会社"
-        data={companyBData} 
-      />
+      {Object.entries(groupedData).map(([companyName, users]) => (
+        <TableSection 
+          key={companyName}
+          title={companyName || "未設定の会社"} 
+          subtitle="省スペースIDに関づく会社"
+          data={users} 
+        />
+      ))}
     </div>
   );
 };
