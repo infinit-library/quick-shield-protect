@@ -1,7 +1,7 @@
-import { PortfolioWebsite } from "@/components/PortfolioWebsite";
+import DataManagementTable from "@/components/DataManagementTable";
 
 const Index = () => {
-  return <PortfolioWebsite />;
+  return <DataManagementTable />;
 };
 
 export default Index;
